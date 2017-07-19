@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+     
+      <defaultCache eternal="false" maxElementsInMemory="1000"
+            overflowToDisk="false" timeToLiveSeconds="600"/>
+     
+		<cache name="customCache" 
+			maxElementsInMemory="1000"
+			eternal="false" 
+			overflowToDisk="false" 
+			timeToLiveSeconds="600"/>
+             
+             
+             
+		<cache name="savelistcache" 
+      		 maxElementsInMemory="1000"
+             eternal="false" 
+             overflowToDisk="false" 
+             timeToLiveSeconds="600"/>
+		
+		
+		<cache name="listcache" 
+			maxElementsInMemory="1000"
+			eternal="false" 
+			overflowToDisk="false" 
+			timeToLiveSeconds="600"/>
+<!--  600 means cache will persist for 5 minutes then  it will go back to DB once ( every five minutes ) this covers test case 2 -->
+                 
+</ehcache>

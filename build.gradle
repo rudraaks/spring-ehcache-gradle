@@ -1,0 +1,83 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+// JDK version source compatibility
+sourceCompatibility = 1.8
+// project version
+version = '1.0'
+// War file name
+war.baseName = 'security_ehcache'
+
+sourceSets.main.java.srcDirs = []
+sourceSets.main.groovy.srcDirs += ["src/main/java"]
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    
+	compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.2'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.4'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.4'
+	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.5'
+	compile group: 'org.springframework', name: 'spring-webmvc', version: '4.1.6.RELEASE'
+	compile group: 'org.springframework', name: 'spring-tx', version: '4.3.8.RELEASE'
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.8.RELEASE'
+	compile group: 'org.springframework', name: 'spring-web', version: '4.3.8.RELEASE'
+	compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.8.RELEASE'
+	
+	compile ('net.sf.ehcache:ehcache:2.10.2.2.21'){
+		exclude module: 'slf4j-api' 
+	}
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.2'
+	compile group: 'log4j', name: 'log4j', version: '1.2.16'
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+	providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+	
+	testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+// dependencies to run on tomcat, are mandatory for tomcat plugin
+dependencies {
+	def tomcatVersion = '7.0.57'
+	tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+			"org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+	tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+		exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+	}
+}
+
+tomcat {
+	httpPort = 8090
+	httpsPort = 8091
+	
+}
+// context where tomcat is deployed, by defautl localhost:8080/
+tomcatRun.contextPath = '/security_ehcache'
+tomcatRunWar.contextPath = '/security_ehcache'
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
