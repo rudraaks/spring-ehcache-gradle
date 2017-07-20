@@ -1,4 +1,4 @@
-package com.zetainteractive.security.keygenerator;
+package com.rudra.aks.keygenerator;
 
 //@Component(value = "googlekeygenerator")
 public class GoogleCustomKeyGenerator {//implements CacheKeyGenerator<String> {

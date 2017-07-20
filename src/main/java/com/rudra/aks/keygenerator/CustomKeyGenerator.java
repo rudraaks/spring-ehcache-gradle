@@ -1,4 +1,4 @@
-package com.zetainteractive.security.keygenerator;
+package com.rudra.aks.keygenerator;
 
 import java.lang.reflect.Method;
 

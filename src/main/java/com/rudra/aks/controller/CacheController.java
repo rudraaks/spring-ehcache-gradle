@@ -1,4 +1,4 @@
-package com.zetainteractive.security.controller;
+package com.rudra.aks.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zetainteractive.security.bo.UserBO;
-import com.zetainteractive.security.service.CacheService;
+import com.rudra.aks.bo.UserBO;
+import com.rudra.aks.service.CacheService;
 
 @RestController
 @RequestMapping("/cache")

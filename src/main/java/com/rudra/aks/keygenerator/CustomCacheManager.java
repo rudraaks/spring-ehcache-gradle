@@ -1,4 +1,4 @@
-package com.zetainteractive.security.keygenerator;
+package com.rudra.aks.keygenerator;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;

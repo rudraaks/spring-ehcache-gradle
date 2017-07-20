@@ -1,8 +1,8 @@
-package com.zetainteractive.security.service;
+package com.rudra.aks.service;
 
 import java.util.List;
 
-import com.zetainteractive.security.bo.UserBO;
+import com.rudra.aks.bo.UserBO;
 
 public interface CacheService {
 	UserBO	getUserById(long userId);

@@ -1,4 +1,4 @@
-package com.zetainteractive.security.service;
+package com.rudra.aks.service;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
-import com.zetainteractive.security.bo.UserBO;
-import com.zetainteractive.security.dao.CacheUserDAO;
+import com.rudra.aks.bo.UserBO;
+import com.rudra.aks.dao.CacheUserDAO;
 
 /**
  * 

@@ -1,8 +1,8 @@
-package com.zetainteractive.security.dao;
+package com.rudra.aks.dao;
 
 import java.util.List;
 
-import com.zetainteractive.security.bo.UserBO;
+import com.rudra.aks.bo.UserBO;
 
 public interface CacheUserDAO {
 	long	saveUser(UserBO userBO);

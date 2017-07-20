@@ -1,4 +1,4 @@
-package com.zetainteractive.security.rowmapper;
+package com.rudra.aks.rowmapper;
 
 
 import java.io.IOException;
@@ -14,12 +14,12 @@ import org.springframework.jdbc.core.RowMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zetainteractive.security.bo.MFAUserImage;
-import com.zetainteractive.security.bo.MFAUserOTP;
-import com.zetainteractive.security.bo.MFAUserQuestionnaire;
-import com.zetainteractive.security.bo.UserBO;
-import com.zetainteractive.security.bo.UserInfo;
-import com.zetainteractive.security.bo.UserNotification;
+import com.rudra.aks.bo.MFAUserImage;
+import com.rudra.aks.bo.MFAUserOTP;
+import com.rudra.aks.bo.MFAUserQuestionnaire;
+import com.rudra.aks.bo.UserBO;
+import com.rudra.aks.bo.UserInfo;
+import com.rudra.aks.bo.UserNotification;
 
 public class UserRowMapper implements RowMapper<UserBO> {
 
